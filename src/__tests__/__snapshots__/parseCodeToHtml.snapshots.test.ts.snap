@@ -1,0 +1,1599 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parseCodeToHtml snapshots > bash > renders bashArguments correctly 1`] = `
+"
+<span class="_token-built_in">echo</span> <span class="_token-string">"Script name: <span class="_token-variable">$0</span>"</span>
+<span class="_token-built_in">echo</span> <span class="_token-string">"First arg: <span class="_token-variable">$1</span>"</span>
+<span class="_token-built_in">echo</span> <span class="_token-string">"All args: <span class="_token-variable">$@</span>"</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashArray correctly 1`] = `
+"
+my_array=(one two three)
+<span class="_token-built_in">echo</span> <span class="_token-string">"Second item: <span class="_token-variable">\${my_array[1]}</span>"</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashCase correctly 1`] = `
+"
+<span class="_token-keyword">case</span> <span class="_token-string">"<span class="_token-variable">$1</span>"</span> <span class="_token-keyword">in</span>
+  start)
+    <span class="_token-built_in">echo</span> <span class="_token-string">"Starting..."</span>
+    ;;
+  stop)
+    <span class="_token-built_in">echo</span> <span class="_token-string">"Stopping..."</span>
+    ;;
+  *)
+    <span class="_token-built_in">echo</span> <span class="_token-string">"Unknown command"</span>
+    ;;
+<span class="_token-keyword">esac</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashFunction correctly 1`] = `
+"
+<span class="_token-function"><span class="_token-title">greet</span></span>() {
+  <span class="_token-built_in">echo</span> <span class="_token-string">"Hello, <span class="_token-variable">$1</span>!"</span>
+}
+
+greet <span class="_token-string">"Alice"</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashHelloWorld correctly 1`] = `
+"
+<span class="_token-built_in">echo</span> <span class="_token-string">"Hello, world!"</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashIfElse correctly 1`] = `
+"
+<span class="_token-keyword">if</span> [ <span class="_token-string">"<span class="_token-variable">$1</span>"</span> = <span class="_token-string">"test"</span> ]; <span class="_token-keyword">then</span>
+  <span class="_token-built_in">echo</span> <span class="_token-string">"Test mode"</span>
+<span class="_token-keyword">else</span>
+  <span class="_token-built_in">echo</span> <span class="_token-string">"Normal mode"</span>
+<span class="_token-keyword">fi</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashLoop correctly 1`] = `
+"
+<span class="_token-keyword">for</span> i <span class="_token-keyword">in</span> 1 2 3; <span class="_token-keyword">do</span>
+  <span class="_token-built_in">echo</span> <span class="_token-string">"Value: <span class="_token-variable">$i</span>"</span>
+<span class="_token-keyword">done</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashPipeGrep correctly 1`] = `
+"
+ps aux | grep node | grep -v grep
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashRedirect correctly 1`] = `
+"
+<span class="_token-built_in">echo</span> <span class="_token-string">"Logging..."</span> >> app.log
+<span class="_token-built_in">cat</span> app.log
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashVariables correctly 1`] = `
+"
+NAME=<span class="_token-string">"Max"</span>
+<span class="_token-built_in">echo</span> <span class="_token-string">"Welcome, <span class="_token-variable">$NAME</span>!"</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > bash > renders bashYarnAdd correctly 1`] = `
+"
+yarn add @webeach/code-parser
+"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeAnimation correctly 1`] = `
+"
+<span class="_token-comment">/* Fade-in animation */</span>
+<span class="_token-selector-class">.fade-in</span> {
+  <span class="_token-attribute">animation</span>: fadeIn <span class="_token-number">0.3s</span> ease-in-out;
+}
+
+<span class="_token-keyword">@keyframes</span> fadeIn {
+  <span class="_token-selector-tag">from</span> { <span class="_token-attribute">opacity</span>: <span class="_token-number">0</span>; }
+  <span class="_token-selector-tag">to</span> { <span class="_token-attribute">opacity</span>: <span class="_token-number">1</span>; }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeButton correctly 1`] = `
+"
+<span class="_token-comment">/* Button styles */</span>
+<span class="_token-selector-class">.button</span> {
+  <span class="_token-attribute">background-color</span>: <span class="_token-built_in">var</span>(--color-primary);
+  <span class="_token-attribute">color</span>: white;
+  <span class="_token-attribute">padding</span>: <span class="_token-number">0.5rem</span> <span class="_token-number">1rem</span>;
+  <span class="_token-attribute">border</span>: none;
+  <span class="_token-attribute">border-radius</span>: <span class="_token-number">8px</span>;
+  <span class="_token-attribute">cursor</span>: pointer;
+  <span class="_token-attribute">transition</span>: background-color <span class="_token-number">0.3s</span>;
+}
+
+<span class="_token-selector-class">.button</span><span class="_token-selector-pseudo">:hover</span> {
+  <span class="_token-attribute">background-color</span>: <span class="_token-built_in">var</span>(--color-primary-hover);
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeDarkTheme correctly 1`] = `
+"
+<span class="_token-selector-attr">[data-theme=<span class="_token-string">'dark'</span>]</span> {
+  <span class="_token-attr">--color-background</span>: <span class="_token-number">#1e1e1e</span>;
+  <span class="_token-attr">--color-text</span>: <span class="_token-number">#f0f0f0</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeFlex correctly 1`] = `
+"
+<span class="_token-comment">/* Flex layout */</span>
+<span class="_token-selector-class">.flex-center</span> {
+  <span class="_token-attribute">display</span>: flex;
+  <span class="_token-attribute">align-items</span>: center;
+  <span class="_token-attribute">justify-content</span>: center;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeGrid correctly 1`] = `
+"
+<span class="_token-comment">/* Responsive grid layout */</span>
+<span class="_token-selector-class">.grid</span> {
+  <span class="_token-attribute">display</span>: grid;
+  <span class="_token-attribute">grid-template-columns</span>: <span class="_token-built_in">repeat</span>(auto-fill, <span class="_token-built_in">minmax</span>(<span class="_token-number">200px</span>, <span class="_token-number">1</span>fr));
+  <span class="_token-attribute">gap</span>: <span class="_token-number">16px</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeInput correctly 1`] = `
+"
+<span class="_token-comment">/* Input field styles */</span>
+<span class="_token-selector-tag">input</span><span class="_token-selector-attr">[type=<span class="_token-string">"text"</span>]</span> {
+  <span class="_token-attribute">padding</span>: <span class="_token-number">0.5rem</span>;
+  <span class="_token-attribute">border</span>: <span class="_token-number">1px</span> solid <span class="_token-built_in">var</span>(--color-border);
+  <span class="_token-attribute">border-radius</span>: <span class="_token-built_in">var</span>(--radius-md);
+  <span class="_token-attribute">outline</span>: none;
+}
+
+<span class="_token-selector-tag">input</span><span class="_token-selector-attr">[type=<span class="_token-string">"text"</span>]</span><span class="_token-selector-pseudo">:focus</span> {
+  <span class="_token-attribute">border-color</span>: <span class="_token-built_in">var</span>(--color-primary);
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeMediaQuery correctly 1`] = `
+"
+<span class="_token-comment">/* Responsive styles */</span>
+<span class="_token-keyword">@media</span> (<span class="_token-attribute">max-width</span>: <span class="_token-number">768px</span>) {
+  <span class="_token-selector-class">.sidebar</span> {
+    <span class="_token-attribute">display</span>: none;
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeScrollbar correctly 1`] = `
+"
+<span class="_token-comment">/* Custom scrollbar */</span>
+::-webkit-scrollbar {
+  <span class="_token-attribute">width</span>: <span class="_token-number">8px</span>;
+}
+
+::-webkit-scrollbar-thumb {
+  <span class="_token-attribute">background</span>: <span class="_token-built_in">var</span>(--color-primary);
+  <span class="_token-attribute">border-radius</span>: <span class="_token-number">4px</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeTypography correctly 1`] = `
+"
+<span class="_token-comment">/* Typography scale */</span>
+<span class="_token-selector-tag">h1</span> {
+  <span class="_token-attribute">font-size</span>: <span class="_token-number">2.5rem</span>;
+  <span class="_token-attribute">font-weight</span>: <span class="_token-number">700</span>;
+  <span class="_token-attribute">margin-bottom</span>: <span class="_token-number">1rem</span>;
+}
+
+<span class="_token-selector-tag">p</span> {
+  <span class="_token-attribute">font-size</span>: <span class="_token-number">1rem</span>;
+  <span class="_token-attribute">line-height</span>: <span class="_token-number">1.6</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > css > renders cssCodeVariables correctly 1`] = `
+"
+<span class="_token-selector-pseudo">:root</span> {
+  <span class="_token-attr">--color-primary</span>: <span class="_token-number">#4e7cf2</span>;
+  <span class="_token-attr">--color-primary-hover</span>: <span class="_token-number">#345fd1</span>;
+  <span class="_token-attr">--radius-sm</span>: <span class="_token-number">4px</span>;
+  <span class="_token-attr">--radius-md</span>: <span class="_token-number">8px</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeBasic correctly 1`] = `
+"
+<span class="_token-meta">&#x3C;!DOCTYPE <span class="_token-keyword">html</span>></span>
+<span class="_token-tag">&#x3C;<span class="_token-name">html</span> <span class="_token-attr">lang</span>=<span class="_token-string">"en"</span>></span>
+<span class="_token-tag">&#x3C;<span class="_token-name">head</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">meta</span> <span class="_token-attr">charset</span>=<span class="_token-string">"UTF-8"</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">title</span>></span>Example<span class="_token-tag">&#x3C;/<span class="_token-name">title</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">link</span> <span class="_token-attr">rel</span>=<span class="_token-string">"stylesheet"</span> <span class="_token-attr">href</span>=<span class="_token-string">"styles.css"</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">head</span>></span>
+<span class="_token-tag">&#x3C;<span class="_token-name">body</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">h1</span>></span>Hello, World!<span class="_token-tag">&#x3C;/<span class="_token-name">h1</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>This is a basic HTML page.<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">body</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">html</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeCustomElement correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">webeach-card</span> <span class="_token-attr">title</span>=<span class="_token-string">"Hello"</span> <span class="_token-attr">theme</span>=<span class="_token-string">"light"</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Custom element content<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">webeach-card</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeForm correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">form</span> <span class="_token-attr">action</span>=<span class="_token-string">"/submit"</span> <span class="_token-attr">method</span>=<span class="_token-string">"POST"</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">label</span> <span class="_token-attr">for</span>=<span class="_token-string">"email"</span>></span>Email:<span class="_token-tag">&#x3C;/<span class="_token-name">label</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">input</span> <span class="_token-attr">type</span>=<span class="_token-string">"email"</span> <span class="_token-attr">id</span>=<span class="_token-string">"email"</span> <span class="_token-attr">name</span>=<span class="_token-string">"email"</span> <span class="_token-attr">required</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">button</span> <span class="_token-attr">type</span>=<span class="_token-string">"submit"</span>></span>Send<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">form</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeInlineStyle correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">div</span> <span class="_token-attr">style</span>=<span class="_token-string">"background: #f5f5f5; padding: 1rem;"</span>></span>
+  Inline styled block
+<span class="_token-tag">&#x3C;/<span class="_token-name">div</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeList correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">ul</span> <span class="_token-attr">class</span>=<span class="_token-string">"features"</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">li</span>></span>Fast<span class="_token-tag">&#x3C;/<span class="_token-name">li</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">li</span>></span>Reliable<span class="_token-tag">&#x3C;/<span class="_token-name">li</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">li</span>></span>Themeable<span class="_token-tag">&#x3C;/<span class="_token-name">li</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">ul</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeMetaViewport correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">meta</span> <span class="_token-attr">name</span>=<span class="_token-string">"viewport"</span> <span class="_token-attr">content</span>=<span class="_token-string">"width=device-width, initial-scale=1.0"</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeScript correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">script</span>></span><span class="javascript">
+  <span class="_token-variable language_">document</span>.<span class="_token-title function_">addEventListener</span>(<span class="_token-string">'DOMContentLoaded'</span>, <span class="_token-function">() =></span> {
+    <span class="_token-variable language_">console</span>.<span class="_token-title function_">log</span>(<span class="_token-string">'Ready!'</span>);
+  });
+</span><span class="_token-tag">&#x3C;/<span class="_token-name">script</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeSemantic correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">header</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">h2</span>></span>Site Header<span class="_token-tag">&#x3C;/<span class="_token-name">h2</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">header</span>></span>
+
+<span class="_token-tag">&#x3C;<span class="_token-name">main</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">article</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">h3</span>></span>Post title<span class="_token-tag">&#x3C;/<span class="_token-name">h3</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Post content here.<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">article</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">main</span>></span>
+
+<span class="_token-tag">&#x3C;<span class="_token-name">footer</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span><span class="_token-symbol">&#x26;copy;</span> 2025 WebEach<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">footer</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeTable correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">table</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">thead</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">tr</span>></span>
+      <span class="_token-tag">&#x3C;<span class="_token-name">th</span>></span>Name<span class="_token-tag">&#x3C;/<span class="_token-name">th</span>></span>
+      <span class="_token-tag">&#x3C;<span class="_token-name">th</span>></span>Age<span class="_token-tag">&#x3C;/<span class="_token-name">th</span>></span>
+    <span class="_token-tag">&#x3C;/<span class="_token-name">tr</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">thead</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">tbody</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">tr</span>></span>
+      <span class="_token-tag">&#x3C;<span class="_token-name">td</span>></span>Alice<span class="_token-tag">&#x3C;/<span class="_token-name">td</span>></span>
+      <span class="_token-tag">&#x3C;<span class="_token-name">td</span>></span>30<span class="_token-tag">&#x3C;/<span class="_token-name">td</span>></span>
+    <span class="_token-tag">&#x3C;/<span class="_token-name">tr</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">tr</span>></span>
+      <span class="_token-tag">&#x3C;<span class="_token-name">td</span>></span>Bob<span class="_token-tag">&#x3C;/<span class="_token-name">td</span>></span>
+      <span class="_token-tag">&#x3C;<span class="_token-name">td</span>></span>25<span class="_token-tag">&#x3C;/<span class="_token-name">td</span>></span>
+    <span class="_token-tag">&#x3C;/<span class="_token-name">tr</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">tbody</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">table</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > html > renders htmlCodeWithEntities correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Tom <span class="_token-symbol">&#x26;amp;</span> Jerry <span class="_token-symbol">&#x26;copy;</span> Warner Bros.<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeArrow correctly 1`] = `
+"
+<span class="_token-comment">// Sum of two numbers</span>
+<span class="_token-keyword">const</span> <span class="_token-title function_">sum</span> = (<span class="_token-params">a, b</span>) => a + b;"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeAsync correctly 1`] = `
+"
+<span class="_token-comment">/**
+ * Fetches JSON data from the given URL
+ * <span class="_token-doctag">@param</span> {<span class="_token-type">string</span>} <span class="_token-variable">url</span>
+ */</span>
+<span class="_token-keyword">async</span> <span class="_token-keyword">function</span> <span class="_token-title function_">fetchData</span>(<span class="_token-params">url</span>) {
+  <span class="_token-keyword">const</span> res = <span class="_token-keyword">await</span> <span class="_token-title function_">fetch</span>(url);
+  <span class="_token-keyword">const</span> data = <span class="_token-keyword">await</span> res.<span class="_token-title function_">json</span>();
+  <span class="_token-keyword">return</span> data;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeClass correctly 1`] = `
+"
+<span class="_token-comment">/**
+ * Person class represents a user with a name
+ */</span>
+<span class="_token-keyword">class</span> <span class="_token-title class_">Person</span> {
+  <span class="_token-title function_">constructor</span>(<span class="_token-params">name</span>) {
+    <span class="_token-variable language_">this</span>.<span class="_token-property">name</span> = name; <span class="_token-comment">// Store name</span>
+  }
+
+  <span class="_token-title function_">speak</span>(<span class="_token-params"></span>) {
+    <span class="_token-variable language_">console</span>.<span class="_token-title function_">log</span>(<span class="_token-string">\`Hi, I'm <span class="_token-subst">\${<span class="_token-variable language_">this</span>.name}</span>\`</span>); <span class="_token-comment">// Log greeting</span>
+}
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeDestructuring correctly 1`] = `
+"
+<span class="_token-comment">/**
+ * Extracts name and age from user object
+ */</span>
+<span class="_token-keyword">const</span> user = { <span class="_token-attr">name</span>: <span class="_token-string">'Max'</span>, <span class="_token-attr">age</span>: <span class="_token-number">29</span> };
+<span class="_token-keyword">const</span> { name, age } = user;"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeEvent correctly 1`] = `
+"
+<span class="_token-comment">// Button click handler</span>
+<span class="_token-variable language_">document</span>.<span class="_token-title function_">getElementById</span>(<span class="_token-string">'btn'</span>).<span class="_token-title function_">addEventListener</span>(<span class="_token-string">'click'</span>, <span class="_token-function">() =></span> {
+  <span class="_token-title function_">alert</span>(<span class="_token-string">'Clicked!'</span>);
+});"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeFunction correctly 1`] = `
+"
+<span class="_token-comment">// Simple greeting function</span>
+<span class="_token-keyword">function</span> <span class="_token-title function_">greet</span>(<span class="_token-params">name</span>) {
+  <span class="_token-keyword">return</span> <span class="_token-string">\`Hello, <span class="_token-subst">\${name}</span>!\`</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeIIFE correctly 1`] = `
+"
+  <span class="_token-comment">// Immediately invoked function expression</span>
+  (<span class="_token-keyword">function</span> (<span class="_token-params"></span>) {
+    <span class="_token-variable language_">console</span>.<span class="_token-title function_">log</span>(<span class="_token-string">'Immediately invoked'</span>);
+  })();"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeMapFilter correctly 1`] = `
+"
+<span class="_token-comment">// Doubles even numbers</span>
+<span class="_token-keyword">const</span> numbers = [<span class="_token-number">1</span>, <span class="_token-number">2</span>, <span class="_token-number">3</span>, <span class="_token-number">4</span>, <span class="_token-number">5</span>];
+<span class="_token-keyword">const</span> evens = numbers.<span class="_token-title function_">filter</span>(<span class="_token-function"><span class="_token-params">n</span> =></span> n % <span class="_token-number">2</span> === <span class="_token-number">0</span>).<span class="_token-title function_">map</span>(<span class="_token-function"><span class="_token-params">n</span> =></span> n * <span class="_token-number">2</span>);"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeModule correctly 1`] = `
+"
+<span class="_token-comment">// Entry point</span>
+<span class="_token-keyword">import</span> { createApp } <span class="_token-keyword">from</span> <span class="_token-string">'vue'</span>;
+<span class="_token-keyword">import</span> <span class="_token-title class_">App</span> <span class="_token-keyword">from</span> <span class="_token-string">'./App.vue'</span>;
+
+<span class="_token-title function_">createApp</span>(<span class="_token-title class_">App</span>).<span class="_token-title function_">mount</span>(<span class="_token-string">'#app'</span>);"
+`;
+
+exports[`parseCodeToHtml snapshots > js > renders jsCodeTryCatch correctly 1`] = `
+"
+<span class="_token-keyword">try</span> {
+  <span class="_token-comment">// Risky operation</span>
+  <span class="_token-title function_">riskyOperation</span>();
+} <span class="_token-keyword">catch</span> (error) {
+  <span class="_token-comment">// Error handler</span>
+  <span class="_token-variable language_">console</span>.<span class="_token-title function_">error</span>(<span class="_token-string">'Something went wrong:'</span>, error);
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonArray correctly 1`] = `
+"
+<span class="_token-punctuation">[</span>
+  <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"id"</span><span class="_token-punctuation">:</span> <span class="_token-number">1</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"title"</span><span class="_token-punctuation">:</span> <span class="_token-string">"First"</span>
+  <span class="_token-punctuation">}</span><span class="_token-punctuation">,</span>
+  <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"id"</span><span class="_token-punctuation">:</span> <span class="_token-number">2</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"title"</span><span class="_token-punctuation">:</span> <span class="_token-string">"Second"</span>
+  <span class="_token-punctuation">}</span>
+<span class="_token-punctuation">]</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonBasic correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"id"</span><span class="_token-punctuation">:</span> <span class="_token-number">1</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"name"</span><span class="_token-punctuation">:</span> <span class="_token-string">"Alice"</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"isAdmin"</span><span class="_token-punctuation">:</span> <span class="_token-literal"><span class="_token-keyword">true</span></span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonBooleanValues correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"active"</span><span class="_token-punctuation">:</span> <span class="_token-literal"><span class="_token-keyword">true</span></span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"enabled"</span><span class="_token-punctuation">:</span> <span class="_token-literal"><span class="_token-keyword">false</span></span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonConfig correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"compilerOptions"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"target"</span><span class="_token-punctuation">:</span> <span class="_token-string">"ESNext"</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"module"</span><span class="_token-punctuation">:</span> <span class="_token-string">"ESNext"</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"strict"</span><span class="_token-punctuation">:</span> <span class="_token-literal"><span class="_token-keyword">true</span></span>
+  <span class="_token-punctuation">}</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"exclude"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">[</span><span class="_token-string">"node_modules"</span><span class="_token-punctuation">]</span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonEmpty correctly 1`] = `
+"
+<span class="_token-punctuation">{</span><span class="_token-punctuation">}</span>;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonMixedTypes correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"id"</span><span class="_token-punctuation">:</span> <span class="_token-number">123</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"tags"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">[</span><span class="_token-string">"featured"</span><span class="_token-punctuation">,</span> <span class="_token-string">"admin"</span><span class="_token-punctuation">]</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"metadata"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"views"</span><span class="_token-punctuation">:</span> <span class="_token-number">1500</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"published"</span><span class="_token-punctuation">:</span> <span class="_token-literal"><span class="_token-keyword">true</span></span>
+  <span class="_token-punctuation">}</span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonNested correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"user"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"id"</span><span class="_token-punctuation">:</span> <span class="_token-number">42</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"profile"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+      <span class="_token-attr">"email"</span><span class="_token-punctuation">:</span> <span class="_token-string">"alice@example.com"</span><span class="_token-punctuation">,</span>
+      <span class="_token-attr">"age"</span><span class="_token-punctuation">:</span> <span class="_token-number">30</span>
+    <span class="_token-punctuation">}</span>
+  <span class="_token-punctuation">}</span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonNullValues correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"title"</span><span class="_token-punctuation">:</span> <span class="_token-literal"><span class="_token-keyword">null</span></span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"description"</span><span class="_token-punctuation">:</span> <span class="_token-string">"N/A"</span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonPackage correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"name"</span><span class="_token-punctuation">:</span> <span class="_token-string">"example-package"</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"version"</span><span class="_token-punctuation">:</span> <span class="_token-string">"1.0.0"</span><span class="_token-punctuation">,</span>
+  <span class="_token-attr">"scripts"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"build"</span><span class="_token-punctuation">:</span> <span class="_token-string">"tsc"</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"start"</span><span class="_token-punctuation">:</span> <span class="_token-string">"node index.js"</span>
+  <span class="_token-punctuation">}</span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > json > renders jsonTheme correctly 1`] = `
+"
+<span class="_token-punctuation">{</span>
+  <span class="_token-attr">"theme"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+    <span class="_token-attr">"colors"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+      <span class="_token-attr">"primary"</span><span class="_token-punctuation">:</span> <span class="_token-string">"#4e7cf2"</span><span class="_token-punctuation">,</span>
+      <span class="_token-attr">"background"</span><span class="_token-punctuation">:</span> <span class="_token-string">"#ffffff"</span>
+    <span class="_token-punctuation">}</span><span class="_token-punctuation">,</span>
+    <span class="_token-attr">"fontSize"</span><span class="_token-punctuation">:</span> <span class="_token-punctuation">{</span>
+      <span class="_token-attr">"base"</span><span class="_token-punctuation">:</span> <span class="_token-string">"16px"</span><span class="_token-punctuation">,</span>
+      <span class="_token-attr">"lg"</span><span class="_token-punctuation">:</span> <span class="_token-string">"20px"</span>
+    <span class="_token-punctuation">}</span>
+  <span class="_token-punctuation">}</span>
+<span class="_token-punctuation">}</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxBasic correctly 1`] = `
+"
+<span class="_token-keyword">function</span> <span class="_token-title function_">App</span>(<span class="_token-params"></span>) {
+  <span class="_token-keyword">return</span> <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">h1</span>></span>Hello, world!<span class="_token-tag">&#x3C;/<span class="_token-name">h1</span>></span></span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxClassName correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Card</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">div</span> <span class="_token-attr">className</span>=<span class="_token-string">"card"</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">h2</span> <span class="_token-attr">className</span>=<span class="_token-string">"card-title"</span>></span>Title<span class="_token-tag">&#x3C;/<span class="_token-name">h2</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">p</span> <span class="_token-attr">className</span>=<span class="_token-string">"card-content"</span>></span>Text<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">div</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxConditional correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Greeting</span> = (<span class="_token-params">{ isLoggedIn }</span>) => {
+  <span class="_token-keyword">return</span> isLoggedIn ? <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Welcome back!<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span></span> : <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Please sign in<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span></span>;
+};"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxEvent correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Clicker</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">button</span> <span class="_token-attr">onClick</span>=<span class="_token-string">{()</span> =></span> alert('Clicked!')}>Click me<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxForm correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Form</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">form</span> <span class="_token-attr">onSubmit</span>=<span class="_token-string">{(e)</span> =></span> {
+    e.preventDefault();
+    console.log('Submitted');
+  }}>
+    <span class="_token-tag">&#x3C;<span class="_token-name">input</span> <span class="_token-attr">type</span>=<span class="_token-string">"email"</span> <span class="_token-attr">required</span> /></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">button</span> <span class="_token-attr">type</span>=<span class="_token-string">"submit"</span>></span>Submit<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">form</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxFragment correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Layout</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">Header</span> /></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">main</span>></span>Content<span class="_token-tag">&#x3C;/<span class="_token-name">main</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">Footer</span> /></span>
+  <span class="_token-tag">&#x3C;/></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxInlineStyle correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Box</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">div</span> <span class="_token-attr">style</span>=<span class="_token-string">{{</span> <span class="_token-attr">padding:</span> '<span class="_token-attr">1rem</span>', <span class="_token-attr">backgroundColor:</span> '#<span class="_token-attr">eee</span>' }}></span>
+    Styled box
+  <span class="_token-tag">&#x3C;/<span class="_token-name">div</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxInput correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Input</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">input</span> <span class="_token-attr">type</span>=<span class="_token-string">"text"</span> <span class="_token-attr">placeholder</span>=<span class="_token-string">"Type here"</span> /></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxList correctly 1`] = `
+"
+<span class="_token-keyword">const</span> items = [<span class="_token-string">'One'</span>, <span class="_token-string">'Two'</span>, <span class="_token-string">'Three'</span>];
+
+<span class="_token-keyword">const</span> <span class="_token-title function_">List</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">ul</span>></span>
+    {items.map((item, index) => <span class="_token-tag">&#x3C;<span class="_token-name">li</span> <span class="_token-attr">key</span>=<span class="_token-string">{index}</span>></span>{item}<span class="_token-tag">&#x3C;/<span class="_token-name">li</span>></span>)}
+  <span class="_token-tag">&#x3C;/<span class="_token-name">ul</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > jsx > renders jsxWithProps correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Button</span> = (<span class="_token-params">{ label }</span>) => {
+  <span class="_token-keyword">return</span> <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">button</span>></span>{label}<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span></span>;
+};"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeConditional correctly 1`] = `
+"
+<span class="_token-variable">@theme:</span> dark;
+
+<span class="_token-selector-tag">body</span> {
+  <span class="_token-selector-class">.when</span> (<span class="_token-variable">@theme</span> = dark) {
+    <span class="_token-attribute">background</span>: <span class="_token-number">#000</span>;
+    <span class="_token-attribute">color</span>: <span class="_token-number">#fff</span>;
+  }
+}
+"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeDynamic correctly 1`] = `
+"
+<span class="_token-variable">@prefix:</span> card;
+
+<span class="_token-selector-class">.@{prefix}</span><span class="_token-selector-tag">-container</span> {
+  <span class="_token-attribute">padding</span>: <span class="_token-number">1rem</span>;
+  <span class="_token-attribute">border</span>: <span class="_token-number">1px</span> solid <span class="_token-number">#ccc</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeExtend correctly 1`] = `
+"
+<span class="_token-selector-class">.btn-base</span> {
+  <span class="_token-attribute">padding</span>: <span class="_token-number">0.5rem</span> <span class="_token-number">1rem</span>;
+  <span class="_token-attribute">border-radius</span>: <span class="_token-number">6px</span>;
+}
+
+<span class="_token-selector-class">.button</span> {
+  <span class="_token-selector-tag">&#x26;</span>:<span class="_token-selector-tag">extend</span>(.btn-base all);
+  <span class="_token-attribute">background-color</span>: blue;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeFunction correctly 1`] = `
+"
+<span class="_token-variable">@base-size:</span> <span class="_token-number">16px</span>;
+
+<span class="_token-selector-class">.rem</span>(<span class="_token-variable">@px</span>) {
+  <span class="_token-variable">@result:</span> (<span class="_token-variable">@px</span> / <span class="_token-variable">@base-size</span>) * <span class="_token-number">1rem</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeImport correctly 1`] = `
+"
+<span class="_token-keyword">@import</span> <span class="_token-string">"colors.less"</span>;
+<span class="_token-keyword">@import</span> <span class="_token-string">"mixins/flex"</span>;
+<span class="_token-keyword">@import</span> (optional) <span class="_token-string">"themes/dark.less"</span>;"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeLoop correctly 1`] = `
+"
+<span class="_token-selector-class">.loop</span> (<span class="_token-variable">@i</span>) <span class="_token-keyword">when</span> (<span class="_token-variable">@i</span> > <span class="_token-number">0</span>) {
+  <span class="_token-selector-class">.m-</span><span class="_token-variable">@{i}</span> {
+    <span class="_token-attribute">margin</span>: (<span class="_token-variable">@i</span> * <span class="_token-number">5px</span>);
+  }
+  <span class="_token-selector-class">.loop</span>(<span class="_token-variable">@i</span> - <span class="_token-number">1</span>);
+}
+
+<span class="_token-selector-class">.loop</span>(<span class="_token-number">3</span>);
+"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeMedia correctly 1`] = `
+"
+<span class="_token-variable">@mobile:</span> <span class="_token-string">~"(max-width: 768px)"</span>;
+
+<span class="_token-keyword">@media</span> <span class="_token-variable">@mobile</span> {
+  <span class="_token-selector-class">.nav</span> {
+    <span class="_token-attribute">display</span>: none;
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeMixin correctly 1`] = `
+"
+<span class="_token-selector-class">.center</span>() {
+  <span class="_token-attribute">display</span>: flex;
+  <span class="_token-attribute">justify-content</span>: center;
+  <span class="_token-attribute">align-items</span>: center;
+}
+
+<span class="_token-selector-class">.box</span> {
+  <span class="_token-selector-class">.center</span>();
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeNesting correctly 1`] = `
+"
+<span class="_token-selector-class">.card</span> {
+  <span class="_token-attribute">padding</span>: <span class="_token-number">1rem</span>;
+
+  <span class="_token-selector-class">.title</span> {
+    <span class="_token-attribute">font-size</span>: <span class="_token-number">1.25rem</span>;
+  }
+
+  <span class="_token-selector-tag">&#x26;</span><span class="_token-selector-pseudo">:hover</span> {
+    <span class="_token-attribute">background-color</span>: <span class="_token-number">#f5f5f5</span>;
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > less > renders lessCodeVariables correctly 1`] = `
+"
+<span class="_token-variable">@primary-color:</span> <span class="_token-number">#4e7cf2</span>;
+<span class="_token-variable">@padding:</span> <span class="_token-number">1rem</span>;
+
+<span class="_token-selector-class">.button</span> {
+  <span class="_token-attribute">background-color</span>: <span class="_token-variable">@primary-color</span>;
+  <span class="_token-attribute">padding</span>: <span class="_token-variable">@padding</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdBlockquote correctly 1`] = `
+"
+<span class="_token-quote">> This is a blockquote.</span>
+<span class="_token-quote">> With multiple lines.</span>
+  "
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdCodeBlock correctly 1`] = `
+"
+<span class="_token-code">\`\`\`ts
+function greet(name: string) {
+  return \` + "\`Hello, \${name}\`;
+" + \`}
+\`\`\`</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdHeading correctly 1`] = `
+"
+<span class="_token-section"># Hello World</span>
+<span class="_token-section">## Subheading</span>
+<span class="_token-section">### Tertiary</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdHr correctly 1`] = `
+"
+---
+"
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdLinkImage correctly 1`] = `
+"
+  [<span class="_token-string">WebEach</span>](<span class="_token-link">https://webeach.dev</span>)
+
+![<span class="_token-string">Alt text</span>](<span class="_token-link">https://example.com/image.png</span>)
+"
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdList correctly 1`] = `
+"
+<span class="_token-bullet">-</span> Item 1
+<span class="_token-bullet">-</span> Item 2
+<span class="_token-bullet">-</span> Subitem
+<span class="_token-bullet">-</span> Item 3
+  "
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdOrderedList correctly 1`] = `
+"
+<span class="_token-bullet">1.</span> First
+<span class="_token-bullet">2.</span> Second
+<span class="_token-bullet">3.</span> Third
+  "
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdParagraph correctly 1`] = `
+"
+This is a paragraph with <span class="_token-strong">**bold**</span>, <span class="_token-emphasis">*italic*</span>, and <span class="_token-code">\` + "\`</span>inline code\`.
+" + ""
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdTable correctly 1`] = `
+"
+| Name  | Age |
+|-------|-----|
+| Alice |  30 |
+| Bob   |  25 |
+"
+`;
+
+exports[`parseCodeToHtml snapshots > md > renders mdTaskList correctly 1`] = `
+"
+<span class="_token-bullet">-</span> [x] Write tests
+<span class="_token-bullet">-</span> [ ] Fix bug
+<span class="_token-bullet">-</span> [ ] Push to repo
+"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeEach correctly 1`] = `
+"
+<span class="_token-variable">$colors</span>: primary, secondary, accent;
+
+<span class="_token-keyword">@each</span> <span class="_token-variable">$color</span> in <span class="_token-variable">$colors</span> {
+  <span class="_token-selector-class">.text-</span>#{<span class="_token-variable">$color</span>} {
+    <span class="_token-attribute">color</span>: <span class="_token-built_in">var</span>(--color-#{<span class="_token-variable">$color</span>});
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeExtends correctly 1`] = `
+"
+%btn-base {
+  <span class="_token-attribute">padding</span>: <span class="_token-number">0.5rem</span> <span class="_token-number">1rem</span>;
+  <span class="_token-attribute">border</span>: none;
+  <span class="_token-attribute">border-radius</span>: <span class="_token-number">6px</span>;
+}
+
+<span class="_token-selector-class">.button</span> {
+  <span class="_token-keyword">@extend</span> %btn-base;
+  <span class="_token-attribute">background-color</span>: blue;
+  <span class="_token-attribute">color</span>: white;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeFunction correctly 1`] = `
+"
+<span class="_token-keyword">@function</span> rem(<span class="_token-variable">$px</span>) {
+  <span class="_token-keyword">@return</span> #{<span class="_token-variable">$px</span> / <span class="_token-number">16</span>}rem;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeIfElse correctly 1`] = `
+"
+<span class="_token-variable">$theme</span>: <span class="_token-string">'dark'</span>;
+
+<span class="_token-selector-tag">body</span> {
+  <span class="_token-keyword">@if</span> <span class="_token-variable">$theme</span> == <span class="_token-string">'dark'</span> {
+    <span class="_token-attribute">background-color</span>: <span class="_token-number">#000</span>;
+    <span class="_token-attribute">color</span>: <span class="_token-number">#fff</span>;
+  } <span class="_token-keyword">@else</span> {
+    <span class="_token-attribute">background-color</span>: <span class="_token-number">#fff</span>;
+    <span class="_token-attribute">color</span>: <span class="_token-number">#000</span>;
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeImport correctly 1`] = `
+"
+<span class="_token-keyword">@import</span> <span class="_token-string">'reset'</span>;
+<span class="_token-keyword">@import</span> <span class="_token-string">'variables/colors'</span>;
+<span class="_token-keyword">@import</span> <span class="_token-string">'mixins/flex'</span>;"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeLoop correctly 1`] = `
+"
+<span class="_token-keyword">@for</span> <span class="_token-variable">$i</span> from <span class="_token-number">1</span> through <span class="_token-number">3</span> {
+  <span class="_token-selector-class">.m-</span>#{<span class="_token-variable">$i</span>} {
+    <span class="_token-attribute">margin</span>: #{<span class="_token-variable">$i</span>}rem;
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeMixins correctly 1`] = `
+"
+<span class="_token-keyword">@mixin</span> center-flex {
+  <span class="_token-attribute">display</span>: flex;
+  <span class="_token-attribute">justify-content</span>: center;
+  <span class="_token-attribute">align-items</span>: center;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeNested correctly 1`] = `
+"
+<span class="_token-selector-class">.card</span> {
+  <span class="_token-attribute">padding</span>: <span class="_token-number">1rem</span>;
+  <span class="_token-attribute">border-radius</span>: <span class="_token-number">8px</span>;
+
+  &#x26;__title {
+    <span class="_token-attribute">font-size</span>: <span class="_token-number">1.25rem</span>;
+    <span class="_token-attribute">font-weight</span>: bold;
+  }
+
+  &#x26;<span class="_token-selector-pseudo">:hover</span> {
+    <span class="_token-attribute">background-color</span>: <span class="_token-number">#f5f5f5</span>;
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeThemeMap correctly 1`] = `
+"
+<span class="_token-variable">$light-theme</span>: (
+  background: <span class="_token-number">#ffffff</span>,
+  text: <span class="_token-number">#000000</span>,
+  primary: <span class="_token-number">#4e7cf2</span>
+);
+
+<span class="_token-variable">$dark-theme</span>: (
+  background: <span class="_token-number">#1e1e1e</span>,
+  text: <span class="_token-number">#f0f0f0</span>,
+  primary: <span class="_token-number">#3a5bdc</span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > scss > renders scssCodeVariables correctly 1`] = `
+"
+<span class="_token-variable">$spacing-sm</span>: <span class="_token-number">0.5rem</span>;
+<span class="_token-variable">$spacing-md</span>: <span class="_token-number">1rem</span>;
+<span class="_token-variable">$radius</span>: <span class="_token-number">8px</span>;
+
+<span class="_token-selector-class">.container</span> {
+  <span class="_token-attribute">padding</span>: <span class="_token-variable">$spacing-md</span>;
+  <span class="_token-attribute">border-radius</span>: <span class="_token-variable">$radius</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellAlias correctly 1`] = `
+"
+alias gs="git status"
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellBackgroundJob correctly 1`] = `
+"
+node server.js &#x26;
+echo "Server started in background"
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellBasic correctly 1`] = `
+"
+echo "Hello from shell!"
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellCdLs correctly 1`] = `
+"
+cd /var/www
+ls -la
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellChmod correctly 1`] = `
+"
+chmod +x deploy.sh
+./deploy.sh
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellCurl correctly 1`] = `
+"
+curl -X POST https://api.example.com -H "Authorization: Bearer $TOKEN"
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellDockerRun correctly 1`] = `
+"
+docker run -d --name redis redis:latest
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellFindGrep correctly 1`] = `
+"
+find . -name "*.js" | xargs grep "TODO"
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellLogTail correctly 1`] = `
+"
+tail -f /var/log/nginx/access.log
+"
+`;
+
+exports[`parseCodeToHtml snapshots > shell > renders shellWithEnv correctly 1`] = `
+"<span class="_token-meta prompt_">
+#</span><span class="bash">!/bin/sh</span>
+export NODE_ENV=production
+echo "Environment is $NODE_ENV"
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlAlter correctly 1`] = `
+"
+<span class="_token-keyword">ALTER TABLE</span> users <span class="_token-keyword">ADD</span> <span class="_token-keyword">COLUMN</span> last_login <span class="_token-type">TIMESTAMP</span>;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlCase correctly 1`] = `
+"
+<span class="_token-keyword">SELECT</span> id,
+  <span class="_token-keyword">CASE</span> <span class="_token-keyword">WHEN</span> active <span class="_token-keyword">THEN</span> <span class="_token-string">'Yes'</span> <span class="_token-keyword">ELSE</span> <span class="_token-string">'No'</span> <span class="_token-keyword">END</span> <span class="_token-keyword">as</span> status
+<span class="_token-keyword">FROM</span> users;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlCreateTable correctly 1`] = `
+"
+<span class="_token-keyword">CREATE TABLE</span> products (
+  id SERIAL <span class="_token-keyword">PRIMARY KEY</span>,
+  name TEXT <span class="_token-keyword">NOT NULL</span>,
+  price <span class="_token-type">NUMERIC</span>(<span class="_token-number">10</span>, <span class="_token-number">2</span>) <span class="_token-keyword">NOT NULL</span>
+);
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlDelete correctly 1`] = `
+"
+<span class="_token-keyword">DELETE</span> <span class="_token-keyword">FROM</span> sessions <span class="_token-keyword">WHERE</span> created_at <span class="_token-operator">&#x3C;</span> NOW() <span class="_token-operator">-</span> <span class="_token-type">INTERVAL</span> <span class="_token-string">'7 days'</span>;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlIndex correctly 1`] = `
+"
+<span class="_token-keyword">CREATE</span> INDEX idx_user_email <span class="_token-keyword">ON</span> users(email);
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlInsert correctly 1`] = `
+"
+<span class="_token-keyword">INSERT INTO</span> posts (title, content, author_id)
+<span class="_token-keyword">VALUES</span> (<span class="_token-string">'Hello'</span>, <span class="_token-string">'Post body'</span>, <span class="_token-number">1</span>);
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlJoin correctly 1`] = `
+"
+<span class="_token-keyword">SELECT</span> u.name, p.title
+<span class="_token-keyword">FROM</span> users u
+<span class="_token-keyword">JOIN</span> posts p <span class="_token-keyword">ON</span> u.id <span class="_token-operator">=</span> p.author_id;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlSelect correctly 1`] = `
+"
+<span class="_token-keyword">SELECT</span> id, name <span class="_token-keyword">FROM</span> users <span class="_token-keyword">WHERE</span> active <span class="_token-operator">=</span> <span class="_token-literal">true</span>;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlTransaction correctly 1`] = `
+"
+<span class="_token-keyword">BEGIN</span>;
+<span class="_token-keyword">UPDATE</span> accounts <span class="_token-keyword">SET</span> balance <span class="_token-operator">=</span> balance <span class="_token-operator">-</span> <span class="_token-number">100</span> <span class="_token-keyword">WHERE</span> id <span class="_token-operator">=</span> <span class="_token-number">1</span>;
+<span class="_token-keyword">UPDATE</span> accounts <span class="_token-keyword">SET</span> balance <span class="_token-operator">=</span> balance <span class="_token-operator">+</span> <span class="_token-number">100</span> <span class="_token-keyword">WHERE</span> id <span class="_token-operator">=</span> <span class="_token-number">2</span>;
+<span class="_token-keyword">COMMIT</span>;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > sql > renders sqlUpdate correctly 1`] = `
+"
+<span class="_token-keyword">UPDATE</span> users <span class="_token-keyword">SET</span> name <span class="_token-operator">=</span> <span class="_token-string">'Max'</span> <span class="_token-keyword">WHERE</span> id <span class="_token-operator">=</span> <span class="_token-number">42</span>;
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusBasic correctly 1`] = `
+"
+<span class="_token-selector-tag">body</span>
+  <span class="_token-attribute">font-family</span>: Arial, sans-serif
+  <span class="_token-attribute">color</span>: <span class="_token-number">#333</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusCondition correctly 1`] = `
+"
+<span class="_token-variable">$theme</span> = <span class="_token-string">'dark'</span>
+
+<span class="_token-selector-tag">body</span>
+  <span class="_token-keyword">if</span> <span class="_token-variable">$theme</span> == <span class="_token-string">'dark'</span>
+    <span class="_token-attribute">background</span>: <span class="_token-number">#000</span>
+    <span class="_token-attribute">color</span>: <span class="_token-number">#fff</span>
+  <span class="_token-keyword">else</span>
+    <span class="_token-attribute">background</span>: <span class="_token-number">#fff</span>
+    <span class="_token-attribute">color</span>: <span class="_token-number">#000</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusFunction correctly 1`] = `
+"
+<span class="_token-function"><span class="_token-title">rem</span><span class="_token-params">(px)</span></span>
+  return px / <span class="_token-number">16rem</span>
+
+<span class="_token-selector-class">.title</span>
+  <span class="_token-attribute">font-size</span>: <span class="_token-built_in">rem</span>(<span class="_token-number">24</span>)
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusImport correctly 1`] = `
+"
+<span class="_token-keyword">@import</span> <span class="_token-string">'variables'</span>
+<span class="_token-keyword">@import</span> <span class="_token-string">'mixins/flex'</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusInterpolation correctly 1`] = `
+"
+<span class="_token-variable">$prefix</span> = <span class="_token-string">'btn'</span>
+
+.{prefix}-primary
+  <span class="_token-attribute">background</span>: blue
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusLoop correctly 1`] = `
+"
+<span class="_token-keyword">for</span> <span class="_token-selector-tag">i</span> <span class="_token-keyword">in</span> <span class="_token-number">1</span>..<span class="_token-number">3</span>
+  .m-{i}
+    <span class="_token-attribute">margin</span>: i * <span class="_token-number">5px</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusMediaQuery correctly 1`] = `
+"
+<span class="_token-keyword">@media</span> (<span class="_token-attribute">max-width</span>: <span class="_token-number">768px</span>)
+  .nav
+    display: none
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusMixin correctly 1`] = `
+"
+<span class="_token-function"><span class="_token-title">center</span><span class="_token-params">()</span></span>
+  <span class="_token-attribute">display</span>: flex
+  <span class="_token-attribute">justify-content</span>: center
+  <span class="_token-attribute">align-items</span>: center
+
+<span class="_token-selector-class">.box</span>
+  <span class="_token-built_in">center</span>()
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusNested correctly 1`] = `
+"
+<span class="_token-selector-class">.card</span>
+  <span class="_token-attribute">padding</span>: <span class="_token-number">1rem</span>
+
+  <span class="_token-selector-class">.title</span>
+    <span class="_token-attribute">font-weight</span>: bold
+
+  <span class="_token-selector-pseudo">&#x26;:hover</span>
+    <span class="_token-attribute">background</span>: <span class="_token-number">#f0f0f0</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > stylus > renders stylusVariables correctly 1`] = `
+"
+<span class="_token-variable">$primary</span> = <span class="_token-number">#4e7cf2</span>
+<span class="_token-variable">$padding</span> = <span class="_token-number">1rem</span>
+
+<span class="_token-selector-class">.button</span>
+  <span class="_token-attribute">background-color</span>: <span class="_token-variable">$primary</span>
+  <span class="_token-attribute">padding</span>: <span class="_token-variable">$padding</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeAssertion correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-attr">value</span>: <span class="_token-built_in">unknown</span> = <span class="_token-string">'hello'</span>;
+<span class="_token-keyword">const</span> strLength = (value <span class="_token-keyword">as</span> <span class="_token-built_in">string</span>).<span class="_token-property">length</span>;"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeClassWithAccess correctly 1`] = `
+"
+  <span class="_token-keyword">class</span> <span class="_token-title class_">Animal</span> {
+    <span class="_token-keyword">private</span> <span class="_token-attr">name</span>: <span class="_token-built_in">string</span>;
+
+    <span class="_token-title function_">constructor</span>(<span class="_token-params"><span class="_token-attr">name</span>: <span class="_token-built_in">string</span></span>) {
+      <span class="_token-variable language_">this</span>.<span class="_token-property">name</span> = name;
+    }
+
+    <span class="_token-keyword">public</span> <span class="_token-title function_">speak</span>(<span class="_token-params"></span>) {
+      <span class="_token-variable language_">console</span>.<span class="_token-title function_">log</span>(<span class="_token-string">\`Hello, I'm <span class="_token-subst">\${<span class="_token-variable language_">this</span>.name}</span>\`</span>);
+}
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeConditionalInfer correctly 1`] = `
+"
+<span class="_token-keyword">type</span> <span class="_token-title class_">GetReturnType</span>&#x3C;T> = T <span class="_token-title function_">extends</span> (...<span class="_token-attr">args</span>: <span class="_token-built_in">any</span>[]) => infer R ? R : <span class="_token-built_in">never</span>;
+
+<span class="_token-keyword">type</span> <span class="_token-title class_">Result</span> = <span class="_token-title class_">GetReturnType</span>&#x3C;<span class="_token-function">() =></span> <span class="_token-built_in">string</span>>; <span class="_token-comment">// string</span>"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeDeclareModule correctly 1`] = `
+"
+<span class="_token-keyword">declare</span> <span class="_token-variable language_">module</span> <span class="_token-string">'custom-lib'</span> {
+  <span class="_token-keyword">export</span> <span class="_token-keyword">function</span> <span class="_token-title function_">doSomething</span>(<span class="_token-params"></span>): <span class="_token-built_in">void</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeDecorator correctly 1`] = `
+"
+  <span class="_token-keyword">function</span> <span class="_token-title function_">Log</span>(<span class="_token-params"><span class="_token-attr">target</span>: <span class="_token-built_in">any</span>, <span class="_token-attr">propertyKey</span>: <span class="_token-built_in">string</span>, <span class="_token-attr">descriptor</span>: <span class="_token-title class_">PropertyDescriptor</span></span>) {
+    <span class="_token-keyword">const</span> original = descriptor.<span class="_token-property">value</span>;
+    descriptor.<span class="_token-property">value</span> = <span class="_token-keyword">function</span> (<span class="_token-params">...<span class="_token-attr">args</span>: <span class="_token-built_in">any</span>[]</span>) {
+      <span class="_token-variable language_">console</span>.<span class="_token-title function_">log</span>(<span class="_token-string">\`Calling <span class="_token-subst">\${propertyKey}</span> with args:\`</span>, args);
+      <span class="_token-keyword">return</span> original.<span class="_token-title function_">apply</span>(<span class="_token-variable language_">this</span>, args);
+    };
+  }
+
+  <span class="_token-keyword">class</span> <span class="_token-title class_">Example</span> {
+    <span class="_token-meta">@Log</span>
+    <span class="_token-title function_">say</span>(<span class="_token-params"><span class="_token-attr">message</span>: <span class="_token-built_in">string</span></span>) {
+      <span class="_token-variable language_">console</span>.<span class="_token-title function_">log</span>(message);
+    }
+  }"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeEnum correctly 1`] = `
+"
+  <span class="_token-keyword">enum</span> <span class="_token-title class_">Direction</span> {
+    <span class="_token-title class_">Up</span> = <span class="_token-string">'UP'</span>,
+    <span class="_token-title class_">Down</span> = <span class="_token-string">'DOWN'</span>,
+    <span class="_token-title class_">Left</span> = <span class="_token-string">'LEFT'</span>,
+    <span class="_token-title class_">Right</span> = <span class="_token-string">'RIGHT'</span>,
+  }"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeFunctionType correctly 1`] = `
+"
+<span class="_token-keyword">type</span> <span class="_token-title class_">Callback</span> = <span class="_token-function">(<span class="_token-params"><span class="_token-attr">value</span>: <span class="_token-built_in">string</span></span>) =></span> <span class="_token-built_in">void</span>;"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeGenericFunction correctly 1`] = `
+"
+  <span class="_token-keyword">function</span> identity&#x3C;T>(<span class="_token-attr">value</span>: T): T {
+    <span class="_token-keyword">return</span> value;
+  }"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeInterface correctly 1`] = `
+"
+  <span class="_token-keyword">interface</span> <span class="_token-title class_">User</span> {
+    <span class="_token-attr">id</span>: <span class="_token-built_in">number</span>;
+    <span class="_token-attr">name</span>: <span class="_token-built_in">string</span>;
+    <span class="_token-attr">isAdmin</span>?: <span class="_token-built_in">boolean</span>;
+  }"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeIntersection correctly 1`] = `
+"
+<span class="_token-keyword">type</span> <span class="_token-title class_">WithTimestamps</span> = {
+  <span class="_token-attr">createdAt</span>: <span class="_token-title class_">Date</span>;
+  <span class="_token-attr">updatedAt</span>: <span class="_token-title class_">Date</span>;
+};
+
+<span class="_token-keyword">type</span> <span class="_token-title class_">Post</span> = {
+  <span class="_token-attr">id</span>: <span class="_token-built_in">number</span>;
+  <span class="_token-attr">content</span>: <span class="_token-built_in">string</span>;
+} &#x26; <span class="_token-title class_">WithTimestamps</span>;"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeIsTypeGuard correctly 1`] = `
+"
+<span class="_token-keyword">function</span> <span class="_token-title function_">isString</span>(<span class="_token-params"><span class="_token-attr">value</span>: <span class="_token-built_in">unknown</span></span>): value is <span class="_token-built_in">string</span> {
+  <span class="_token-keyword">return</span> <span class="_token-keyword">typeof</span> value === <span class="_token-string">'string'</span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeOverloads correctly 1`] = `
+"
+<span class="_token-keyword">function</span> <span class="_token-title function_">reverse</span>(<span class="_token-params"><span class="_token-attr">x</span>: <span class="_token-built_in">string</span></span>): <span class="_token-built_in">string</span>;
+<span class="_token-keyword">function</span> <span class="_token-title function_">reverse</span>(<span class="_token-params"><span class="_token-attr">x</span>: <span class="_token-built_in">number</span></span>): <span class="_token-built_in">number</span>;
+<span class="_token-keyword">function</span> <span class="_token-title function_">reverse</span>(<span class="_token-params"><span class="_token-attr">x</span>: <span class="_token-built_in">string</span> | <span class="_token-built_in">number</span></span>): <span class="_token-built_in">string</span> | <span class="_token-built_in">number</span> {
+  <span class="_token-keyword">if</span> (<span class="_token-keyword">typeof</span> x === <span class="_token-string">'string'</span>) {
+    <span class="_token-keyword">return</span> x.<span class="_token-title function_">split</span>(<span class="_token-string">''</span>).<span class="_token-title function_">reverse</span>().<span class="_token-title function_">join</span>(<span class="_token-string">''</span>);
+  } <span class="_token-keyword">else</span> {
+    <span class="_token-keyword">return</span> <span class="_token-title class_">Number</span>(x.<span class="_token-title function_">toString</span>().<span class="_token-title function_">split</span>(<span class="_token-string">''</span>).<span class="_token-title function_">reverse</span>().<span class="_token-title function_">join</span>(<span class="_token-string">''</span>));
+  }
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeSatisfies correctly 1`] = `
+"
+<span class="_token-keyword">const</span> config = {
+  <span class="_token-attr">port</span>: <span class="_token-number">3000</span>,
+  <span class="_token-attr">debug</span>: <span class="_token-literal">true</span>,
+} <span class="_token-keyword">satisfies</span> {
+  <span class="_token-attr">port</span>: <span class="_token-built_in">number</span>;
+  <span class="_token-attr">debug</span>: <span class="_token-built_in">boolean</span>;
+};"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeTypeAlias correctly 1`] = `
+"
+  <span class="_token-keyword">type</span> <span class="_token-title class_">Status</span> = <span class="_token-string">'pending'</span> | <span class="_token-string">'success'</span> | <span class="_token-string">'error'</span>;"
+`;
+
+exports[`parseCodeToHtml snapshots > ts > renders tsCodeUtilityTypes correctly 1`] = `
+"
+<span class="_token-keyword">interface</span> <span class="_token-title class_">User</span> {
+  <span class="_token-attr">id</span>: <span class="_token-built_in">number</span>;
+  <span class="_token-attr">name</span>: <span class="_token-built_in">string</span>;
+  <span class="_token-attr">email</span>: <span class="_token-built_in">string</span>;
+}
+
+<span class="_token-keyword">type</span> <span class="_token-title class_">PartialUser</span> = <span class="_token-title class_">Partial</span>&#x3C;<span class="_token-title class_">User</span>>;
+<span class="_token-keyword">type</span> <span class="_token-title class_">ReadonlyUser</span> = <span class="_token-title class_">Readonly</span>&#x3C;<span class="_token-title class_">User</span>>;"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxBasic correctly 1`] = `
+"
+<span class="_token-keyword">function</span> <span class="_token-title function_">App</span>(<span class="_token-params"></span>) {
+  <span class="_token-keyword">return</span> <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">h1</span>></span>Hello, TSX!<span class="_token-tag">&#x3C;/<span class="_token-name">h1</span>></span></span>;
+}"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxClassName correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Card</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">div</span> <span class="_token-attr">className</span>=<span class="_token-string">"card"</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">h2</span> <span class="_token-attr">className</span>=<span class="_token-string">"card-title"</span>></span>Title<span class="_token-tag">&#x3C;/<span class="_token-name">h2</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">p</span> <span class="_token-attr">className</span>=<span class="_token-string">"card-content"</span>></span>Text<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">div</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxConditional correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Greeting</span> = (<span class="_token-params">{ isLoggedIn }: { isLoggedIn: <span class="_token-built_in">boolean</span> }</span>) => {
+  <span class="_token-keyword">return</span> isLoggedIn ? <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Welcome back!<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span></span> : <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">p</span>></span>Please sign in<span class="_token-tag">&#x3C;/<span class="_token-name">p</span>></span></span>;
+};"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxEvent correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Clicker</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">button</span> <span class="_token-attr">onClick</span>=<span class="_token-string">{()</span> =></span> alert('Clicked!')}>Click me<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxForm correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Form</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">form</span> <span class="_token-attr">onSubmit</span>=<span class="_token-string">{(e)</span> =></span> {
+    e.preventDefault();
+    console.log('Submitted');
+  }}>
+    <span class="_token-tag">&#x3C;<span class="_token-name">input</span> <span class="_token-attr">type</span>=<span class="_token-string">"email"</span> <span class="_token-attr">required</span> /></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">button</span> <span class="_token-attr">type</span>=<span class="_token-string">"submit"</span>></span>Submit<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">form</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxFragment correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Layout</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">Header</span> /></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">main</span>></span>Content<span class="_token-tag">&#x3C;/<span class="_token-name">main</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">Footer</span> /></span>
+  <span class="_token-tag">&#x3C;/></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxGenericComponent correctly 1`] = `
+"
+<span class="_token-keyword">type</span> <span class="_token-title class_">ListProps</span>&#x3C;T> = {
+  <span class="_token-attr">items</span>: T[];
+  <span class="_token-attr">renderItem</span>: <span class="_token-function">(<span class="_token-params"><span class="_token-attr">item</span>: T</span>) =></span> <span class="_token-variable constant_">JSX</span>.<span class="_token-property">Element</span>;
+};
+
+<span class="_token-keyword">function</span> <span class="_token-title class_">List</span>&#x3C;T>({ items, renderItem }: <span class="_token-title class_">ListProps</span>&#x3C;T>) {
+  <span class="_token-keyword">return</span> <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">ul</span>></span>{items.map(renderItem)}<span class="_token-tag">&#x3C;/<span class="_token-name">ul</span>></span></span>;
+}
+
+<span class="_token-keyword">const</span> <span class="_token-title function_">Component</span> = (<span class="_token-params"></span>) => (
+  &#x3C;<span class="_token-title class_">List</span>&#x3C;<span class="_token-built_in">number</span>>
+    items={[<span class="_token-number">1</span>, <span class="_token-number">2</span>, <span class="_token-number">3</span>]}
+    renderItem={<span class="_token-function">(<span class="_token-params">n</span>) =></span> <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">li</span> <span class="_token-attr">key</span>=<span class="_token-string">{n}</span>></span>{n}<span class="_token-tag">&#x3C;/<span class="_token-name">li</span>></span></span>}
+  />
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxInput correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-title function_">Input</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">input</span> <span class="_token-attr">type</span>=<span class="_token-string">"text"</span> <span class="_token-attr">placeholder</span>=<span class="_token-string">"Type here"</span> /></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxList correctly 1`] = `
+"
+<span class="_token-keyword">const</span> <span class="_token-attr">items</span>: <span class="_token-built_in">string</span>[] = [<span class="_token-string">'One'</span>, <span class="_token-string">'Two'</span>, <span class="_token-string">'Three'</span>];
+
+<span class="_token-keyword">const</span> <span class="_token-title function_">List</span> = (<span class="_token-params"></span>) => (
+  <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">ul</span>></span>
+    {items.map((item, index) => <span class="_token-tag">&#x3C;<span class="_token-name">li</span> <span class="_token-attr">key</span>=<span class="_token-string">{index}</span>></span>{item}<span class="_token-tag">&#x3C;/<span class="_token-name">li</span>></span>)}
+  <span class="_token-tag">&#x3C;/<span class="_token-name">ul</span>></span></span>
+);"
+`;
+
+exports[`parseCodeToHtml snapshots > tsx > renders tsxWithProps correctly 1`] = `
+"
+<span class="_token-keyword">type</span> <span class="_token-title class_">ButtonProps</span> = {
+  <span class="_token-attr">label</span>: <span class="_token-built_in">string</span>;
+  <span class="_token-attr">onClick</span>: <span class="_token-function">() =></span> <span class="_token-built_in">void</span>;
+};
+
+<span class="_token-keyword">const</span> <span class="_token-title function_">Button</span> = (<span class="_token-params">{ label, onClick }: <span class="_token-title class_">ButtonProps</span></span>) => {
+  <span class="_token-keyword">return</span> <span class="xml"><span class="_token-tag">&#x3C;<span class="_token-name">button</span> <span class="_token-attr">onClick</span>=<span class="_token-string">{onClick}</span>></span>{label}<span class="_token-tag">&#x3C;/<span class="_token-name">button</span>></span></span>;
+};"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeBasic correctly 1`] = `
+"
+<span class="_token-meta">&#x3C;?xml version=<span class="_token-string">"1.0"</span> encoding=<span class="_token-string">"UTF-8"</span>?></span>
+<span class="_token-tag">&#x3C;<span class="_token-name">note</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">to</span>></span>Tove<span class="_token-tag">&#x3C;/<span class="_token-name">to</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">from</span>></span>Jani<span class="_token-tag">&#x3C;/<span class="_token-name">from</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">heading</span>></span>Reminder<span class="_token-tag">&#x3C;/<span class="_token-name">heading</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">body</span>></span>Don't forget me this weekend!<span class="_token-tag">&#x3C;/<span class="_token-name">body</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">note</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeCDATA correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">script</span>></span><span class="xml">&#x3C;![CDATA[
+  var a = 5 &#x3C; 10 &#x26;&#x26; 3 > 1;
+]]></span><span class="_token-tag">&#x3C;/<span class="_token-name">script</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeComment correctly 1`] = `
+"
+<span class="_token-comment">&#x3C;!-- This is a comment --></span>
+<span class="_token-tag">&#x3C;<span class="_token-name">config</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">mode</span>></span>production<span class="_token-tag">&#x3C;/<span class="_token-name">mode</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">config</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeCustom correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">webeach-ui</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">card</span> <span class="_token-attr">title</span>=<span class="_token-string">"Hello"</span>></span>Welcome<span class="_token-tag">&#x3C;/<span class="_token-name">card</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">webeach-ui</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeDoctype correctly 1`] = `
+"
+<span class="_token-meta">&#x3C;!DOCTYPE <span class="_token-keyword">note</span> [
+  <span class="_token-meta">&#x3C;!ELEMENT <span class="_token-keyword">note</span> (<span class="_token-keyword">to</span>,<span class="_token-keyword">from</span>,<span class="_token-keyword">heading</span>,<span class="_token-keyword">body</span>)></span>
+  <span class="_token-meta">&#x3C;!ELEMENT <span class="_token-keyword">to</span> (<span class="_token-keyword">#PCDATA</span>)></span>
+  <span class="_token-meta">&#x3C;!ELEMENT <span class="_token-keyword">from</span> (<span class="_token-keyword">#PCDATA</span>)></span>
+  <span class="_token-meta">&#x3C;!ELEMENT <span class="_token-keyword">heading</span> (<span class="_token-keyword">#PCDATA</span>)></span>
+  <span class="_token-meta">&#x3C;!ELEMENT <span class="_token-keyword">body</span> (<span class="_token-keyword">#PCDATA</span>)></span>
+]></span>
+<span class="_token-tag">&#x3C;<span class="_token-name">note</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">to</span>></span>Ivan<span class="_token-tag">&#x3C;/<span class="_token-name">to</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">from</span>></span>Maria<span class="_token-tag">&#x3C;/<span class="_token-name">from</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">heading</span>></span>Hello<span class="_token-tag">&#x3C;/<span class="_token-name">heading</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">body</span>></span>Hello World!<span class="_token-tag">&#x3C;/<span class="_token-name">body</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">note</span>></span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeEmptyTags correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">images</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">image</span> <span class="_token-attr">src</span>=<span class="_token-string">"cover.jpg"</span> /></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">image</span> <span class="_token-attr">src</span>=<span class="_token-string">"thumbnail.jpg"</span> /></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">images</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeNamespaces correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">svg</span> <span class="_token-attr">xmlns</span>=<span class="_token-string">"http://www.w3.org/2000/svg"</span> <span class="_token-attr">version</span>=<span class="_token-string">"1.1"</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">circle</span> <span class="_token-attr">cx</span>=<span class="_token-string">"50"</span> <span class="_token-attr">cy</span>=<span class="_token-string">"50"</span> <span class="_token-attr">r</span>=<span class="_token-string">"40"</span> <span class="_token-attr">stroke</span>=<span class="_token-string">"green"</span> <span class="_token-attr">stroke-width</span>=<span class="_token-string">"4"</span> <span class="_token-attr">fill</span>=<span class="_token-string">"yellow"</span> /></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">svg</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeNested correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">library</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">book</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">title</span>></span>1984<span class="_token-tag">&#x3C;/<span class="_token-name">title</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">author</span>></span>George Orwell<span class="_token-tag">&#x3C;/<span class="_token-name">author</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">book</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">book</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">title</span>></span>Brave New World<span class="_token-tag">&#x3C;/<span class="_token-name">title</span>></span>
+    <span class="_token-tag">&#x3C;<span class="_token-name">author</span>></span>Aldous Huxley<span class="_token-tag">&#x3C;/<span class="_token-name">author</span>></span>
+  <span class="_token-tag">&#x3C;/<span class="_token-name">book</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">library</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeWithAttributes correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">user</span> <span class="_token-attr">id</span>=<span class="_token-string">"42"</span> <span class="_token-attr">active</span>=<span class="_token-string">"true"</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">name</span>></span>Maxim<span class="_token-tag">&#x3C;/<span class="_token-name">name</span>></span>
+  <span class="_token-tag">&#x3C;<span class="_token-name">role</span>></span>admin<span class="_token-tag">&#x3C;/<span class="_token-name">role</span>></span>
+<span class="_token-tag">&#x3C;/<span class="_token-name">user</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > xml > renders xmlCodeWithEntities correctly 1`] = `
+"
+<span class="_token-tag">&#x3C;<span class="_token-name">message</span>></span>
+  Good <span class="_token-symbol">&#x26;amp;</span> Evil coexist.
+<span class="_token-tag">&#x3C;/<span class="_token-name">message</span>></span>"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlArray correctly 1`] = `
+"
+<span class="_token-bullet">-</span> <span class="_token-attr">title:</span> <span class="_token-string">First</span>
+  <span class="_token-attr">id:</span> <span class="_token-number">1</span>
+<span class="_token-bullet">-</span> <span class="_token-attr">title:</span> <span class="_token-string">Second</span>
+  <span class="_token-attr">id:</span> <span class="_token-number">2</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlBasic correctly 1`] = `
+"
+<span class="_token-attr">id:</span> <span class="_token-number">1</span>
+<span class="_token-attr">name:</span> <span class="_token-string">Alice</span>
+<span class="_token-attr">isAdmin:</span> <span class="_token-literal">true</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlBoolean correctly 1`] = `
+"
+<span class="_token-attr">active:</span> <span class="_token-literal">true</span>
+<span class="_token-attr">enabled:</span> <span class="_token-literal">false</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlConfig correctly 1`] = `
+"
+<span class="_token-attr">compilerOptions:</span>
+  <span class="_token-attr">target:</span> <span class="_token-string">ESNext</span>
+  <span class="_token-attr">module:</span> <span class="_token-string">ESNext</span>
+  <span class="_token-attr">strict:</span> <span class="_token-literal">true</span>
+<span class="_token-attr">exclude:</span>
+  <span class="_token-bullet">-</span> <span class="_token-string">node_modules</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlEmpty correctly 1`] = `
+"
+{}
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlMixedTypes correctly 1`] = `
+"
+<span class="_token-attr">id:</span> <span class="_token-number">123</span>
+<span class="_token-attr">tags:</span>
+  <span class="_token-bullet">-</span> <span class="_token-string">featured</span>
+  <span class="_token-bullet">-</span> <span class="_token-string">admin</span>
+<span class="_token-attr">metadata:</span>
+  <span class="_token-attr">views:</span> <span class="_token-number">1500</span>
+  <span class="_token-attr">published:</span> <span class="_token-literal">true</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlNested correctly 1`] = `
+"
+<span class="_token-attr">user:</span>
+  <span class="_token-attr">id:</span> <span class="_token-number">42</span>
+  <span class="_token-attr">profile:</span>
+    <span class="_token-attr">email:</span> <span class="_token-string">alice@example.com</span>
+    <span class="_token-attr">age:</span> <span class="_token-number">30</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlNull correctly 1`] = `
+"
+<span class="_token-attr">title:</span> <span class="_token-literal">null</span>
+<span class="_token-attr">description:</span> <span class="_token-string">N/A</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlPackage correctly 1`] = `
+"
+<span class="_token-attr">name:</span> <span class="_token-string">example-package</span>
+<span class="_token-attr">version:</span> <span class="_token-number">1.0</span><span class="_token-number">.0</span>
+<span class="_token-attr">scripts:</span>
+  <span class="_token-attr">build:</span> <span class="_token-string">tsc</span>
+  <span class="_token-attr">start:</span> <span class="_token-string">node</span> <span class="_token-string">index.js</span>
+"
+`;
+
+exports[`parseCodeToHtml snapshots > yaml > renders yamlTheme correctly 1`] = `
+"
+<span class="_token-attr">theme:</span>
+  <span class="_token-attr">colors:</span>
+    <span class="_token-attr">primary:</span> <span class="_token-string">"#4e7cf2"</span>
+    <span class="_token-attr">background:</span> <span class="_token-string">"#ffffff"</span>
+  <span class="_token-attr">fontSize:</span>
+    <span class="_token-attr">base:</span> <span class="_token-string">"16px"</span>
+    <span class="_token-attr">lg:</span> <span class="_token-string">"20px"</span>
+"
+`;

@@ -1,0 +1,101 @@
+{
+  "name": "@webeach/code-parser",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ruslan Martynov",
+    "email": "github@webea.ch"
+  },
+  "description": "Parse code strings into HTML or HAST with syntax highlighting for the WebEach ecosystem",
+  "keywords": [
+    "syntax",
+    "highlighting",
+    "code",
+    "lowlight",
+    "highlight.js",
+    "code-snippets",
+    "webeach",
+    "tokens",
+    "mdast",
+    "code-highlighter"
+  ],
+  "license": "MIT",
+  "packageManager": "yarn@4.7.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webeach/webeach-code-parser"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": "22.2.0"
+  },
+  "type": "module",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/ejs/index.js",
+  "types": "./lib/types.d.ts",
+  "exports": {
+    "types": "./lib/types.d.ts",
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.js"
+  },
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "lint:types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "release": "semantic-release",
+    "clean": "rm -rf lib",
+    "prepare": "is-ci || husky"
+  },
+  "lint-staged": {
+    "**/*.{cjs,js,jsx,mjs,mts,ts,tsx}": [
+      "yarn lint"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.12.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "@types/node": "^22.7.6",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rollup": "^4.24.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-node-externals": "^7.1.3",
+    "semantic-release": "^24.2.0",
+    "semantic-release-yarn": "^3.0.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.10.0",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "hast-util-to-html": "^9.0.5",
+    "highlight.js": "~11.11.1",
+    "lowlight": "^3.3.0"
+  }
+}
